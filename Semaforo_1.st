@@ -26,12 +26,12 @@ Timer_Rojo_2: TON; // Temporizador luz roja semáforo 2
 END_VAR
 
 // Lógica de los temporizadores
-Timer_Verde_1(IN := Luz_Verde_1, PT := T#10s);
+Timer_Verde_1(IN := Luz_Verde_1, PT := T#5s);
 Timer_Amarillo_1(IN := Luz_Amarillo_1, PT := T#3s);
-Timer_Rojo_1(IN := Luz_Rojo_1, PT := T#10s);
-Timer_Verde_2(IN := Luz_Verde_2, PT := T#10s);
+Timer_Rojo_1(IN := Luz_Rojo_1, PT := T#2s);
+Timer_Verde_2(IN := Luz_Verde_2, PT := T#5s);
 Timer_Amarillo_2(IN := Luz_Amarillo_2, PT := T#3s);
-Timer_Rojo_2(IN := Luz_Rojo_2, PT := T#10s);
+Timer_Rojo_2(IN := Luz_Rojo_2, PT := T#2s);
 
 // Lógica de las luces
 Luz_Verde_1 := Timer_Verde_1.Q;
