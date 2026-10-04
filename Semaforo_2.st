@@ -26,36 +26,25 @@ Timer_Rojo_2: TON; // Temporizador luz roja semáforo 2
 END_VAR
 
 // Lógica de los temporizadores
-Timer_Verde_1(IN:=Luz_Verde_1,PT:=T#5s);
+Timer_Verde_1(IN := Luz_Verde_1, PT := T#5s);
 Timer_Amarillo_1(IN := Luz_Amarillo_1, PT := T#3s);
 Timer_Rojo_1(IN := Luz_Rojo_1, PT := T#2s);
 Timer_Verde_2(IN := Luz_Verde_2, PT := T#5s);
 Timer_Amarillo_2(IN := Luz_Amarillo_2, PT := T#3s);
 Timer_Rojo_2(IN := Luz_Rojo_2, PT := T#2s);
 
-// Lógica de las luces
-Luz_Verde_1 := Timer_Verde_1.Q;
-Luz_Amarillo_1 := Timer_Amarillo_1.Q;
-Luz_Rojo_1 := Timer_Rojo_1.Q;
-Luz_Verde_2 := Timer_Verde_2.Q;
-Luz_Amarillo_2 := Timer_Amarillo_2.Q;
-Luz_Rojo_2 := Timer_Rojo_2.Q;
-
 // Lógica de los semáforos
 IF Timer_Verde_1.Q THEN
-    Luz_Verde_1 := TRUE;
-    Luz_Amarillo_1 := FALSE;
-    Luz_Rojo_1 := FALSE;
+    Luz_Verde_1 := FALSE;
+    Luz_Amarillo_1 := TRUE;
 END_IF;
 
 IF Timer_Amarillo_1.Q THEN
-    Luz_Verde_1 := FALSE;
-    Luz_Amarillo_1 := TRUE;
-    Luz_Rojo_1 := FALSE;
+    Luz_Amarillo_1 := FALSE;
+    Luz_Rojo_1 := TRUE;
 END_IF;
 
 IF Timer_Rojo_1.Q THEN
-    Luz_Verde_1 := FALSE;
-    Luz_Amarillo_1 := FALSE;
-    Luz_Rojo_1 := TRUE;
+    Luz_Rojo_1 := FALSE;
+    Luz_Verde_1 := TRUE;
 END_IF;
