@@ -8,9 +8,6 @@ VAR
 Luz_Verde_1: BOOL := TRUE;
 Luz_Amarillo_1: BOOL;
 Luz_Rojo_1: BOOL;
-Luz_Verde_2: BOOL;
-Luz_Amarillo_2: BOOL;
-Luz_Rojo_2: BOOL := TRUE;
 
 // Asignamos las variables de los temporizadores
 // TON es un temporizador que se activa cuando la señal de entrada es TRUE
@@ -20,18 +17,12 @@ Luz_Rojo_2: BOOL := TRUE;
 Timer_Verde_1: TON; // Temporizador luz verde semáforo 1
 Timer_Amarillo_1: TON; // Temporizador luz amarilla semáforo 1
 Timer_Rojo_1: TON; // Temporizador luz roja semáforo 1
-Timer_Verde_2: TON; // Temporizador luz verde semáforo 2
-Timer_Amarillo_2: TON; // Temporizador luz amarilla semáforo 2
-Timer_Rojo_2: TON; // Temporizador luz roja semáforo 2
 END_VAR
 
 // Lógica de los temporizadores
 Timer_Verde_1(IN := Luz_Verde_1, PT := T#5s);
 Timer_Amarillo_1(IN := Luz_Amarillo_1, PT := T#3s);
 Timer_Rojo_1(IN := Luz_Rojo_1, PT := T#2s);
-Timer_Verde_2(IN := Luz_Verde_2, PT := T#5s);
-Timer_Amarillo_2(IN := Luz_Amarillo_2, PT := T#3s);
-Timer_Rojo_2(IN := Luz_Rojo_2, PT := T#2s);
 
 // Lógica de los semáforos
 IF Timer_Verde_1.Q THEN
