@@ -12,4 +12,4 @@ END_VAR
 
 Luz1 := (Boton1 OR boton2) AND (Boton3 OR Boton4) AND NOT STOP;
 
- / / END
+ // END
