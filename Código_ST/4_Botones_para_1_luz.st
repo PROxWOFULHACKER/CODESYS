@@ -10,6 +10,6 @@ END_VAR
 // separados en 2 bloques de 2 botones en paralelo + un boton de paro
 // Practica sobre compuertas logicas OR, AND y NOT
 
-Luz1 := (Boton1 OR boton2) AND (Boton3 OR Boton4) AND NOT STOP;
+Luz1 := (Boton1 OR boton2 OR Luz1) AND (Boton3 OR Boton4 OR Luz1) AND NOT STOP;
 
  // END
